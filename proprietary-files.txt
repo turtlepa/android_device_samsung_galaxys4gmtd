@@ -1,5 +1,7 @@
-etc/vendor/samsung-agps/secgps.conf
-vendor/bin/samsung-gpsd
+etc/gps.conf
+vendor/bin/gpsd
+vendor/etc/gps.xml
+vendor/lib/hw/gps.aries.so
 lib/libclientgps.so
 lib/libril.so
 lib/libsecril-client.so
