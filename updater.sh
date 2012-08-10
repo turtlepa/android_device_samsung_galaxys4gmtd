@@ -75,6 +75,8 @@ if /tmp/busybox test -e /dev/block/bml7 ; then
     fi
     /tmp/busybox echo "Successfully wrote kernel to boot partition"
     /tmp/busybox sync
+    /tmp/busybox umount /sdcard
+    /tmp/busybox sleep 10
 
     /sbin/reboot
     exit 0
