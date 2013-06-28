@@ -1,10 +1,10 @@
-# Copyright (C) 2012 The Android Open Source Project
+# Copyright (C) 2012 Daniel Bateman
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
 # You may obtain a copy of the License at
 #
-#      http://www.apache.org/licenses/LICENSE-2.0
+#     http://www.apache.org/licenses/LICENSE-2.0
 #
 # Unless required by applicable law or agreed to in writing, software
 # distributed under the License is distributed on an "AS IS" BASIS,
@@ -13,10 +13,11 @@
 # limitations under the License.
 
 LOCAL_PATH := $(call my-dir)
+include $(CLEAN_VARS)
 
-include $(CLEAR_VARS)
-
-ALL_PREBUILT += $(INSTALLED_KERNEL_TARGET)
-
-# include the non-open-source counterpart to this file
--include vendor/samsung/galaxys4gmtd/AndroidBoardVendor.mk
+LOCAL_MODULE_TAGS := optional
+LOCAL_SRC_FILES := main.cpp
+LOCAL_SHARED_LIBRARIES := libutils libc
+LOCAL_MODULE := gpsd
+LOCAL_MODULE_PATH := $(TARGET_OUT_VENDOR_EXECUTABLES)
+include $(BUILD_EXECUTABLE)

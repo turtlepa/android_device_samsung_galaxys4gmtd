@@ -82,7 +82,7 @@ if /tmp/busybox test -e /dev/block/bml7 ; then
     exit 0
 
 elif /tmp/busybox test -e /dev/block/mtdblock0 ; then
-# we're running on a mtd device
+# we're running on an mtd device
 
     # make sure sdcard is mounted
     check_mount /sdcard /dev/block/mmcblk0p1 vfat

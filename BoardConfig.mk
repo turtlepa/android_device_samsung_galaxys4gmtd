@@ -22,9 +22,11 @@ BOARD_USES_GENERIC_AUDIO := false
 
 BOARD_USES_LIBSECRIL_STUB := true
 
+TARGET_ARCH := arm
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv7-a-neon
+TARGET_ARCH_VARIANT_CPU := cortex-a8
 ARCH_ARM_HAVE_TLS_REGISTER := true
 
 TARGET_NO_BOOTLOADER := true
@@ -33,10 +35,9 @@ TARGET_NO_RADIOIMAGE := true
 TARGET_PROVIDES_INIT := true
 TARGET_BOARD_PLATFORM := s5pc110
 TARGET_BOOTLOADER_BOARD_NAME := aries
-TARGET_RECOVERY_INITRC := device/samsung/galaxys4gmtd/recovery.rc
+TARGET_RECOVERY_INITRC := device/samsung/galaxys4gmtd/rdisk/recovery.rc
 
 BOARD_MOBILEDATA_INTERFACE_NAME = "pdp0"
-BOARD_UMS_LUNFILE := /sys/class/android_usb/android0/f_mass_storage/lun/file
 
 # Kernel Config
 TARGET_KERNEL_CONFIG := cyanogenmod_galaxys4gmtd_defconfig
@@ -45,14 +46,15 @@ TARGET_KERNEL_CONFIG := cyanogenmod_galaxys4gmtd_defconfig
 TARGET_KERNEL_SOURCE := kernel/samsung/aries
 
 # Releasetools
-TARGET_RELEASETOOL_OTA_FROM_TARGET_SCRIPT := ./device/samsung/galaxys4gmtd/releasetools/galaxys4gmtd_ota_from_target_files
-TARGET_RELEASETOOL_IMG_FROM_TARGET_SCRIPT := ./device/samsung/galaxys4gmtd/releasetools/galaxys4gmtd_img_from_target_files
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/galaxys4gmtd
 
 # Camera
 USE_CAMERA_STUB := false
 ifeq ($(USE_CAMERA_STUB),false)
 BOARD_CAMERA_LIBRARIES := libcamera
 endif
+BOARD_CAMERA_HAVE_ISO := true
+BOARD_CAMERA_HAVE_REVERSE_FFC := true
 
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
@@ -71,8 +73,8 @@ BOARD_KERNEL_CMDLINE := console=ttyFIQ0,115200 init=/init no_console_suspend
 
 # fix this up by examining /proc/mtd on a running device
 BOARD_BOOTIMAGE_PARTITION_SIZE := 7864320
-BOARD_SYSTEMIMAGE_PARTITION_SIZE := 403701760
-BOARD_USERDATAIMAGE_PARTITION_SIZE := 555745280
+BOARD_SYSTEMIMAGE_PARTITION_SIZE := 367001600
+BOARD_USERDATAIMAGE_PARTITION_SIZE := 581959680
 BOARD_FLASH_BLOCK_SIZE := 4096
 
 # Connectivity - Wi-Fi
@@ -86,8 +88,11 @@ BOARD_WLAN_DEVICE_REV       := bcm4329
 WIFI_DRIVER_MODULE_NAME     := "bcmdhd"
 WIFI_DRIVER_FW_PATH_PARAM   := "/sys/module/bcmdhd/parameters/firmware_path"
 WIFI_DRIVER_FW_PATH_STA     := "/vendor/firmware/fw_bcmdhd.bin"
-WIFI_DRIVER_FW_PATH_P2P     := "/vendor/firmware/fw_bcmdhd_p2p.bin"
 WIFI_DRIVER_FW_PATH_AP      := "/vendor/firmware/fw_bcmdhd_apsta.bin"
+
+# Bluetooth
+BOARD_BLUETOOTH_BDROID_BUILDCFG_INCLUDE_DIR := device/samsung/galaxys4gmtd/bdroid
+BOARD_BLUEDROID_VENDOR_CONF := device/samsung/aries-common/libbt_vndcfg.txt 
 
 # Vold
 BOARD_VOLD_EMMC_SHARES_DEV_MAJOR := true
@@ -101,5 +106,27 @@ BOARD_CUSTOM_BOOTIMG_MK := device/samsung/galaxys4gmtd/shbootimg.mk
 
 # Hardware rendering
 USE_OPENGL_RENDERER := true
+
+# TARGET_DISABLE_TRIPLE_BUFFERING can be used to disable triple buffering
+# on per target basis. On crespo it is possible to do so in theory
+# to save memory, however, there are currently some limitations in the
+# OpenGL ES driver that in conjunction with disable triple-buffering
+# would hurt performance significantly (see b/6016711)
+TARGET_DISABLE_TRIPLE_BUFFERING := false
+
+BOARD_ALLOW_EGL_HIBERNATION := true
+
+# Bootanimation
+TARGET_BOOTANIMATION_PRELOAD := true
+TARGET_BOOTANIMATION_TEXTURE_CACHE := false
+
+# hwcomposer: custom vsync ioctl
+BOARD_CUSTOM_VSYNC_IOCTL := true
+
+# Suspend in charger to disable capacitive keys
+BOARD_CHARGER_ENABLE_SUSPEND := true
+
+# Include aries specific stuff
+-include device/samsung/aries-common/Android.mk
 
 TARGET_OTA_ASSERT_DEVICE := aries,galaxys4g,galaxys4gmtd,SGH-T959V,SGH-T959W
