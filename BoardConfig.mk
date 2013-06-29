@@ -104,6 +104,9 @@ BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/aries-common/recovery/graphics.
 BOARD_USES_BML_OVER_MTD := true
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/galaxys4gmtd/shbootimg.mk
 
+# SkTextBox for libtvout
+BOARD_USES_SKTEXTBOX := true
+
 # Hardware rendering
 USE_OPENGL_RENDERER := true
 
