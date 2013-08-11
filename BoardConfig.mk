@@ -134,7 +134,7 @@ BOARD_CHARGER_ENABLE_SUSPEND := true
 
 # SELinux
 BOARD_SEPOLICY_DIRS += \
-    device/samsung/aries-common/sepolicy
+    device/samsung/galaxys4gmtd/sepolicy
 
 BOARD_SEPOLICY_UNION += \
     bdaddr_read.te \
