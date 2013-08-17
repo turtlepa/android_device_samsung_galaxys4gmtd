@@ -10,8 +10,8 @@ $(call inherit-product, vendor/slim/config/common_full_phone.mk)
 # Inherit device configuration
 $(call inherit-product, device/samsung/galaxys4gmtd/full_galaxys4gmtd.mk)
 
-# Inherit device settings
-$(call inherit-product, vendor/slim/config/common_sgs.mk)
+#Device Settings for Samsung Galaxy phones
+PRODUCT_PACKAGE_OVERLAYS += vendor/slim/overlay/sgs4g
 
 PRODUCT_COPY_FILES += \
     vendor/slim/prebuilt/hdpi/bootanimation.zip:system/media/bootanimation.zip
