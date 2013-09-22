@@ -14,7 +14,7 @@ $(call inherit-product, device/samsung/galaxys4gmtd/full_galaxys4gmtd.mk)
 PRODUCT_PACKAGE_OVERLAYS += vendor/slim/overlay/sgs4g
 
 PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/bootanimation/480.zip:system/media/bootanimation.zip
+    vendor/slim/prebuilt/hdpi/bootanimation.zip:system/media/bootanimation.zip
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.camera.res=5MP
