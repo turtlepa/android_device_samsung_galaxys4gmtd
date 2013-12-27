@@ -38,7 +38,7 @@ TARGET_PROVIDES_INIT := true
 TARGET_BOARD_PLATFORM := s5pc110
 TARGET_BOOTLOADER_BOARD_NAME := aries
 TARGET_RECOVERY_INITRC := device/samsung/galaxys4gmtd/rdisk/recovery.rc
-TARGET_RECOVERY_FSTAB := device/samsung/aries-common/fstab.aries
+TARGET_RECOVERY_FSTAB := device/samsung/galaxys4gmtd/fstab.aries
 RECOVERY_FSTAB_VERSION := 2
 
 BOARD_MOBILEDATA_INTERFACE_NAME = "pdp0"
