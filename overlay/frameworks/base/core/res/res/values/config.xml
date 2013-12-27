@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <!--
 /*
-** Copyright 2009, The Android Open Source Project
+** Copyright 2013, The Android Open Source Project
 **
 ** Licensed under the Apache License, Version 2.0 (the "License");
 ** you may not use this file except in compliance with the License.
@@ -20,7 +20,6 @@
 <!-- These resources are around just to allow their values to be customized
      for different hardware and product builds. -->
 <resources>
-
     <!-- Flag indicating whether we should enable the automatic brightness in Settings.
          config_hardware_automatic_brightness_available is not set, so we will use software implementation -->
     <bool name="config_automatic_brightness_available">true</bool>
@@ -31,8 +30,8 @@
     <!-- Our amoled doesn't animate well. -->
     <bool name="config_animateScreenLights">false</bool>
 
-    <!-- disable menu hard key on Crespo in non-pattern lockscreen -->
-    <bool name="config_disableMenuKeyInLockScreen">true</bool>
+    <!-- disable menu hard key on Crespo in non-pattern lockscreen >
+    <bool name="config_disableMenuKeyInLockScreen">true</bool-->
 
     <!-- Array of light sensor LUX values to define our levels for auto backlight brightness support.
          The N entries of this array define N + 1 zones as follows:
@@ -94,6 +93,7 @@
 
     <integer name="config_deskDockKeepsScreenOn">0</integer>
     <integer name="config_carDockKeepsScreenOn">1</integer>
+    <bool name="config_deskDockEnablesAccelerometer">true</bool>
 
     <!-- Default color for notification LED is white -->
     <color name="config_defaultNotificationColor">#ffffffff</color>
@@ -101,6 +101,7 @@
     <!-- Default blink frequency for notification LED is 9 seconds. -->
     <integer name="config_defaultNotificationLedOff">9000</integer>
 
+    <!-- Package name providing network location and geocoder API support. -->
     <string-array name="config_locationProviderPackageNames" translatable="false">
         <item>com.android.location.fused</item>
         <item>com.google.android.location</item>
@@ -204,9 +205,23 @@
     <integer name="config_soundEffectVolumeDb">-12</integer>
 
     <!-- Timeout in MS for how long you have to long-press the back key to
-         kill the foreground app. -->
-    <integer name="config_backKillTimeout">1500</integer>
+         kill the foreground app. >
+    <integer name="config_backKillTimeout">1500</integer -->
 
-    <!--Boolean to enable stk functionality on Samsung phones-->
+    <!-- empty string to disable, or eg: /sys/kernel/fast_charge/force_fast_charge
+         for a custom path the delivered kernel supports.
+         it is disabled by default so devices need to add an overlay to enable >
+    <string name="config_fastChargePath" translatable="false">/sys/kernel/fast_charge/force_fast_charge</string -->
+
+    <!-- Disable the home key unlock setting >
+    <bool name="config_disableHomeUnlockSetting">false</bool -->
+
+    <!-- Workaround for devices with broken keyboards >
+    <bool name="config_forceDisableHardwareKeyboard">true</bool -->
+
+    <!-- Boolean to enable stk functionality on Samsung phones -->
     <bool name="config_samsung_stk">true</bool>
+
+    <!-- Boolean to force HW Rotation Lock >
+    <bool name="config_hasRotationLockSwitch">false</bool-->
 </resources>

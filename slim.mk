@@ -13,8 +13,9 @@ $(call inherit-product, device/samsung/galaxys4gmtd/full_galaxys4gmtd.mk)
 #Device Settings for Samsung Galaxy phones
 PRODUCT_PACKAGE_OVERLAYS += vendor/slim/overlay/sgs4g
 
-PRODUCT_COPY_FILES += \
-    vendor/slim/prebuilt/common/bootanimation/480.zip:system/media/bootanimation.zip
+# Boot animation
+TARGET_SCREEN_HEIGHT := 800
+TARGET_SCREEN_WIDTH := 480
 
 PRODUCT_PROPERTY_OVERRIDES += \
     ro.camera.res=5MP

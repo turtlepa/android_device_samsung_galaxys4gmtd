@@ -58,11 +58,6 @@ PRODUCT_COPY_FILES += \
 	device/samsung/galaxys4gmtd/rdisk/lpm.rc:root/lpm.rc \
 	device/samsung/galaxys4gmtd/rdisk/ueventd.aries.rc:root/ueventd.aries.rc
 
-# TWRP
-PRODUCT_COPY_FILES += \
-    	device/samsung/galaxys4gmtd/recovery/twrp.fstab:recovery/root/etc/twrp.fstab
-
-
 # Prebuilt kl keymaps
 PRODUCT_COPY_FILES += \
 	device/samsung/galaxys4gmtd/prebuilt/key/aries-keypad.kl:system/usr/keylayout/aries-keypad.kl \
