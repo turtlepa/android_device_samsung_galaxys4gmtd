@@ -104,16 +104,16 @@ TARGET_USE_CUSTOM_LUN_FILE_PATH := "/sys/devices/platform/s3c-usbgadget/gadget/l
 
 # Recovery
 BOARD_HAS_NO_SELECT_BUTTON := true
-BOARD_CUSTOM_GRAPHICS := ../../../device/samsung/aries-common/recovery/graphics.c
 BOARD_USES_BML_OVER_MTD := true
 BOARD_CUSTOM_BOOTIMG_MK := device/samsung/galaxys4gmtd/shbootimg.mk
 
 # TWRP
 DEVICE_RESOLUTION := 480x800
-
+RECOVERY_GRAPHICS_USE_LINELENGTH := true
 TW_EXTERNAL_STORAGE_PATH := "/sdcard"
 TW_EXTERNAL_STORAGE_MOUNT_POINT := "sdcard"
-
+TW_FLASH_FROM_STORAGE := true
+TW_INCLUDE_INJECTTWRP := true
 TW_NO_REBOOT_BOOTLOADER := true
 TW_DEFAULT_EXTERNAL_STORAGE := true
 TW_HAS_DOWNLOAD_MODE := true
