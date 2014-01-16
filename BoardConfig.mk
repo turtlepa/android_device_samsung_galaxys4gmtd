@@ -48,6 +48,7 @@ TARGET_KERNEL_CONFIG := cyanogenmod_galaxys4gmtd_defconfig
 
 # Kernel Source
 TARGET_KERNEL_SOURCE := kernel/samsung/aries
+TARGET_KERNEL_SUPPORTS_HUGEMEM := true
 
 # Releasetools
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/galaxys4gmtd
