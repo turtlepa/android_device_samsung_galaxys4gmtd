@@ -163,6 +163,7 @@ PRODUCT_PROPERTY_OVERRIDES := \
 # be reachable from resources or other mechanisms.
 PRODUCT_PROPERTY_OVERRIDES += \
 	wifi.interface=wlan0 \
+	wifi.supplicant_scan_interval=300 \
 	ro.telephony.ril_class=SamsungExynos3RIL \
 	ro.telephony.ril.v3=icccardstatus,datacall,signalstrength,facilitylock \
 	mobiledata.interfaces=pdp0,eth0,gprs,ppp0 \
@@ -203,6 +204,10 @@ PRODUCT_TAGS += dalvik.gc.type-precise
 
 PRODUCT_COPY_FILES += \
 	device/samsung/galaxys4gmtd/updater.sh:updater.sh
+
+# GPSInit files
+PRODUCT_COPY_FILES += \
+	device/samsung/galaxys4gmtd/gps:system/etc/init.d/gps \
 
 $(call inherit-product-if-exists, hardware/broadcom/wlan/bcmdhd/firmware/bcm4329/device-bcm.mk)
 
