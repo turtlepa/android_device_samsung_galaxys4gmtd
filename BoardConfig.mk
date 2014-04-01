@@ -45,7 +45,7 @@ RECOVERY_FSTAB_VERSION := 2
 BOARD_MOBILEDATA_INTERFACE_NAME = "pdp0"
 
 # Kernel Config
-TARGET_KERNEL_CONFIG := cyanogenmod_galaxys4gmtd_defconfig
+TARGET_KERNEL_CONFIG := niltmt_galaxys4gmtd_defconfig
 
 # Kernel Source
 TARGET_KERNEL_SOURCE := kernel/samsung/aries
