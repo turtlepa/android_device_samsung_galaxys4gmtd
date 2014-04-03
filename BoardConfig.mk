@@ -57,7 +57,7 @@ TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/galaxys4gmtd
 # Camera
 USE_CAMERA_STUB := false
 ifeq ($(USE_CAMERA_STUB),false)
-BOARD_CAMERA_LIBRARIES := libcamera
+BOARD_CAMERA_LIBRARIES := libcameragalaxys4g
 endif
 BOARD_CAMERA_HAVE_ISO := true
 BOARD_CAMERA_HAVE_REVERSE_FFC := true
