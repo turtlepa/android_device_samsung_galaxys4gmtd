@@ -27,6 +27,7 @@ TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
 TARGET_ARCH_VARIANT := armv7-a-neon
 TARGET_CPU_VARIANT := cortex-a8
+TARGET_ARCH_VARIANT_CPU := cortex-a8
 ARCH_ARM_HAVE_TLS_REGISTER := true
 TARGET_GCC_VERSION := 4.7
 TARGET_ARCH_LOWMEM := true
@@ -55,9 +56,11 @@ TARGET_KERNEL_SUPPORTS_HUGEMEM := true
 TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/galaxys4gmtd
 
 # Camera
+# pick up copy here, not from aries-common directly
+TARGET_PROVIDES_LIBCAMERA := true
 USE_CAMERA_STUB := false
 ifeq ($(USE_CAMERA_STUB),false)
-BOARD_CAMERA_LIBRARIES := libcameragalaxys4g
+BOARD_CAMERA_LIBRARIES := libcamera
 endif
 BOARD_CAMERA_HAVE_ISO := true
 BOARD_CAMERA_HAVE_REVERSE_FFC := true
@@ -65,6 +68,7 @@ BOARD_CAMERA_HAVE_REVERSE_FFC := true
 # Bluetooth
 BOARD_HAVE_BLUETOOTH := true
 BOARD_HAVE_BLUETOOTH_BCM := true
+BOARD_BLUEDROID_VENDOR_CONF := device/samsung/aries-common/libbt_vndcfg.txt
 
 # Video Devices
 BOARD_V4L2_DEVICE := /dev/video1
@@ -143,6 +147,7 @@ TARGET_RUNNING_WITHOUT_SYNC_FRAMEWORK := true
 # Bootanimation
 TARGET_BOOTANIMATION_PRELOAD := true
 TARGET_BOOTANIMATION_TEXTURE_CACHE := false
+TARGET_BOOTANIMATION_USE_RGB565 := true
 
 # hwcomposer: custom vsync ioctl
 BOARD_CUSTOM_VSYNC_IOCTL := true
