@@ -105,7 +105,7 @@ PRODUCT_PACKAGES += \
 	sensors.aries \
 	power.s5pc110 \
 	hwcomposer.s5pc110 \
-	cameragalaxys4g.aries \
+	camera.aries \
 	audio.primary.aries \
 	audio.a2dp.default \
 	audio.usb.default \
@@ -117,7 +117,7 @@ PRODUCT_COPY_FILES += \
 # Libs
 PRODUCT_PACKAGES += \
 	libstagefrighthw \
-	libcameragalaxys4g
+	libcamera
 
 # Bluetooth MAC Address
 PRODUCT_PACKAGES += \
