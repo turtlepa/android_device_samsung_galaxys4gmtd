@@ -26,6 +26,8 @@ LOCAL_SRC_FILES := prebuilt/kcm/cypress-touchkey.kcm
 LOCAL_MODULE_TAGS := optional
 include $(BUILD_KEY_CHAR_MAP)
 
+ifneq ($(TARGET_SIMULATOR),true)
 include $(call all-makefiles-under,$(LOCAL_PATH))
+endif
 
 endif
