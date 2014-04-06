@@ -141,6 +141,9 @@ on fs
     restorecon /sys/devices/virtual/misc/voodoo_sound/speaker_tuning
     restorecon /sys/devices/virtual/misc/voodoo_sound/stereo_expansion
     restorecon /sys/devices/virtual/misc/voodoo_sound/stereo_expansion_gain
+
+# zRAM: only read one page at a time
+    write /proc/sys/vm/page-cluster 0
  
 on post-fs
     # We chown/chmod /data again so because mount is run as root + defaults
