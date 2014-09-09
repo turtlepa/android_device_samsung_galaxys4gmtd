@@ -52,7 +52,7 @@ TARGET_KERNEL_SOURCE := kernel/samsung/aries
 TARGET_KERNEL_SUPPORTS_HUGEMEM := true
 
 # Releasetools
-TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/galaxys4gmtd
+TARGET_RELEASETOOLS_EXTENSIONS := device/samsung/aries-common
 
 # Camera
 # pick up copy here, not from aries-common directly
