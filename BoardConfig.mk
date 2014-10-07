@@ -44,11 +44,10 @@ RECOVERY_FSTAB_VERSION := 2
 
 BOARD_MOBILEDATA_INTERFACE_NAME = "pdp0"
 
-# Kernel Config
-TARGET_KERNEL_CONFIG := slim_galaxys4gmtd_defconfig
-
 # Kernel Source
 TARGET_KERNEL_SOURCE := kernel/samsung/aries
+TARGET_KERNEL_CONFIG := slim_galaxys4gmtd_defconfig
+TARGET_KERNEL_CUSTOM_TOOLCHAIN := linaro-4.8-14.04/bin/arm-linux-gnueabihf-
 TARGET_KERNEL_SUPPORTS_HUGEMEM := true
 
 # Releasetools
